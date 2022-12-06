@@ -1,0 +1,29 @@
+[package]
+name = "ddns_client"
+version = "0.1.0"
+edition = "2021"
+authors = ["Lablack Mourad <mouradost@gmail.com>"]
+description = "A simple to use CLI DDNS client updater."
+readme = "README.md"
+repository = "https://github.com/mouradost/ddns_client/"
+license = "MIT OR Apache-2.0"
+keywords = ["ddns", "client"]
+categories = ["command-line-utilities"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+colored = "2.0.0"
+reqwest = { version = "0.11.13", features = ["json"] }
+serde = { version = "1.0.149", features = ["derive"] }
+serde_yaml = "0.9.14"
+tokio = { version = "1.23.0", features = ["full"] }
+clap = {version = "4.0.29", features = ["derive"]}
+
+# For small binary
+[profile.release]
+strip = true
+opt-level = "s"
+lto = true
+codegen-units = 1
+
