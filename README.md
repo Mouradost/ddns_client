@@ -15,8 +15,12 @@ ddns_client ~/.config/ddns_client/config.yaml -t 600
 ## Config sample
 
 ```yaml
+# Domain name
 domain: YOUR_DOMAIN
+# DDNS server token
 token: xxxx-xxxx-xxxx-xxxx
+# Request confirmation from the server
 verbose: true
+# Clear all ip records from the server
 clear: true
 ```

@@ -7,7 +7,7 @@ use serde::{Deserialize, Serialize};
 
 use colored::*;
 
-/// Structure that holds the ip information got from `<https://ipinfo.io>`
+/// Structure that holds the ip information got from [ipinfo](https://ipinfo.io)
 #[derive(Serialize, Deserialize, Debug)]
 pub struct IpInfo {
     ip: String,
@@ -23,9 +23,13 @@ pub struct IpInfo {
 /// Structure that holds the configuration for updating the DDNS server
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Config {
+    /// Domain name
     domain: String,
+    /// DDNS server token
     token: String,
+    /// Request confirmation from the server
     verbose: bool,
+    /// Clear all ip records from the server
     clear: bool,
 }
 
@@ -36,7 +40,7 @@ impl Default for Config {
             domain: Default::default(),
             token: Default::default(),
             verbose: true,
-            clear: true,
+            clear: false,
         }
     }
 }
@@ -90,11 +94,11 @@ async fn get_ip() -> Result<IpInfo, reqwest::Error> {
         .await
 }
 
-/// Update the DDNS server
+/// .
 ///
 /// # Errors
 ///
-/// This function will return an error if DDNS server doens't respond
+/// This function will return an error if .
 async fn update_dns(config: &Config, ip_info: &IpInfo) -> Result<String, reqwest::Error> {
     let url = format!(
         "https://www.duckdns.org/update?domains={}&token={}&ip={}&verbose={}&clear={}",
