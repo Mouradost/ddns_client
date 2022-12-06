@@ -4,7 +4,7 @@ A simple DDNS client updater.
 
 ## Supported DDNS Servers
 
-- (Duck DNS)[https://www.duckdns.org]
+- [Duck DNS](https://www.duckdns.org)
 
 ## How to use it
 
