@@ -14,11 +14,11 @@ categories = ["command-line-utilities"]
 
 [dependencies]
 colored = "2.0.0"
-reqwest = { version = "0.11.13", features = ["json"] }
-serde = { version = "1.0.149", features = ["derive"] }
-serde_yaml = "0.9.14"
-tokio = { version = "1.23.0", features = ["full"] }
-clap = {version = "4.0.29", features = ["derive"]}
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_yaml = "0.9"
+tokio = { version = "1.28", features = ["full"] }
+clap = {version = "4.3", features = ["derive"]}
 
 # For small binary
 [profile.release]
