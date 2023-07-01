@@ -76,6 +76,6 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            target/release/PROJECT_NAME_darwin
+            target/release/ddns_client_darwin
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
