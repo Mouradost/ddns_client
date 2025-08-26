@@ -22,7 +22,7 @@ token: xxxx-xxxx-xxxx-xxxx
 # Request confirmation from the server
 verbose: true
 # Clear all ip records from the server
-clear: true
+clear: false
 ```
 
 ## Run ddns_client as a service

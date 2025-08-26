@@ -1,0 +1,12 @@
+services:
+  ddns_client:
+    container_name: ddns_client
+    image: ghcr.io/mouradost/ddns_client:latest
+    env_file:
+      - .env
+    environment:
+      PUID: ${PUID}
+      PGID: ${PGID}
+      TZ: ${TZ}
+    volumes:
+      - ${DATADIR}/data:/data

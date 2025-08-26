@@ -13,12 +13,13 @@ categories = ["command-line-utilities"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-colored = "2.0.0"
-reqwest = { version = "0.11", features = ["json"] }
-serde = { version = "1.0", features = ["derive"] }
-serde_yaml = "0.9"
-tokio = { version = "1.28", features = ["full"] }
-clap = {version = "4.3", features = ["derive"]}
+colored = "3.0.0"
+reqwest = { version = "0.12.23", features = ["json"] }
+serde = { version = "1.0.219", features = ["derive"] }
+serde_yaml = "*"
+tokio = { version = "1.47.1", features = ["full"] }
+clap = {version = "4.5.46", features = ["derive"]}
+openssl = { version = "0.10.73", features = ["vendored"] }
 
 # For small binary
 [profile.release]

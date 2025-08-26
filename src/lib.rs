@@ -49,7 +49,7 @@ impl Config {
     /// Get the config from config.yaml or generate a new one with default configuration
     pub fn get_config(path: &PathBuf) -> Result<Self, Box<dyn std::error::Error>> {
         let config = match File::open(path) {
-            Ok(f) => serde_yaml::from_reader(f).expect(""),
+            Ok(f) => serde_yaml::from_reader(f)?,
             Err(err) => {
                 let config = Self::default();
                 let prefix = match path.parent() {

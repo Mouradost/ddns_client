@@ -7,6 +7,6 @@ pub struct Cli {
     pub path: std::path::PathBuf,
 
     /// Retry timeout in seconds
-   #[arg(short, long, default_value_t = 600)]
-   pub timeout: u64,
+    #[arg(short, long, default_value_t = 600)]
+    pub timeout: u64,
 }
