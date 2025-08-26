@@ -64,7 +64,7 @@ WORKDIR /app
 # Copy files
 COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/ddns_client /app/ddns_client
 # Run the app
-CMD ["/app/ddns_client /data/config.yaml"]
+CMD ["./ddns_client /data/config.yaml"]
 
 # docker login --username mouradost --password ${{ secrets.GH_TOKEN }} ghcr.io
 # docker build -t ghcr.io/mouradost/ddns_client:latest .
