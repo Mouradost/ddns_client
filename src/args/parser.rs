@@ -9,4 +9,12 @@ pub struct Cli {
     /// Retry timeout in seconds
     #[arg(short, long, default_value_t = 600)]
     pub timeout: u64,
+
+    /// Retry timeout in seconds
+    #[arg(short, long, default_value_t = false)]
+    pub demon: bool,
+
+    /// Retry time to wait before checking if ip has changed in seconds
+    #[arg(short, long, default_value_t = 600)]
+    pub wait: u64,
 }

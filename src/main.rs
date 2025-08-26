@@ -20,7 +20,8 @@ async fn main() {
     let args = Cli::parse();
     match Config::get_config(&args.path){
         Ok(config) => {
-                println!("{}\n{:#?}", "Found config:".green(), config);
+            println!("{}\n{:#?}", "Found config:".green(), config);
+            loop {
                 let mut updated = false;
                 while !updated {
                     updated = match run(&config).await {
@@ -40,8 +41,13 @@ async fn main() {
                         thread::sleep(Duration::from_secs(args.timeout));
                     }
                 }
-
                 println!("{}", "DDNS updated!".green());
+                if !args.demon {
+                    break;
+                } else {
+                    thread::sleep(Duration::from_secs(args.wait));
+                }
+            }
         },
         Err(err) => eprint!("{}\n  {}\n  {}", "Config error:".red(), err, "A new sample config has been generated!\n  Please fill the missing informations and try again...".yellow()),
     }
